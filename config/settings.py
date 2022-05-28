@@ -33,8 +33,16 @@ SECRET_KEY = env.str("SECRET_KEY")
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Application definition
+CLOUDINARY_STORAGE = {
+  'CLOUD_NAME': "portfolio-imagens",
+  'API_KEY': "581116637244594",
+  'API_SECRET': "-4YxztcnF88cPThk57fl-oUlC_I",
+}
+
+MEDIA_URL = '/porfolio/'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,7 +52,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
-    'whitenoise.runserver_nostatic',  # novo   
+    'whitenoise.runserver_nostatic',  # novo 
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [

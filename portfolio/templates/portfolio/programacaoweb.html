@@ -11,7 +11,7 @@
         {% for tecnologia  in tecnologias %}
             <div>
                 <h3> <a href="{{tecnologia.link}}" target="_blank">{{tecnologia.nome}} : {{tecnologia.acronimo}}</a></h3>
-                <img src="../../{{tecnologia.logotipo}}" class = "logo_tecnologia"><br>
+                <img src="{{tecnologia.logotipo.url}}" class = "logo_tecnologia"><br>
                 <ul>
                     <li><b>Ano Criação: </b>{{tecnologia.anoCriacao}}</li>
                     <li><b>Criador: </b>{{tecnologia.criador}}</li>
@@ -40,12 +40,12 @@
         {% for tecnologiawebsite  in tecnologiawebsites %}
             <div>
                 <h3> <a href="{{tecnologiawebsite.link}}" target="_blank">{{tecnologiawebsite.nome}} : {{tecnologiawebsite.acronimo}}</a></h3>
-                <img src="../../{{tecnologiawebsite.logotipo}}" class = "logo_tecnologia">
+                <img src="{{tecnologiawebsite.logotipo.url}}" class = "logo_tecnologia">
                 <ul>
                     <li><b>Ano Criação: </b>{{tecnologiawebsite.anoCriacao}}</li>
                     <li><b>Criador: </b>{{tecnologiawebsite.criador}}</li>
                 </ul><br>
-                <img src="../../{{tecnologiawebsite.codigo}}" class = "codigo_img">
+                <img src="{{tecnologiawebsite.codigo.url}}" class = "codigo_img">
                 <p>{{tecnologiawebsite.descricao}}</p>
             </div>
         {% endfor %}
@@ -66,7 +66,7 @@
         {% for noticia  in noticias %}
             <div>
                 <h3 class = "titulo_noticia"> <a href="{{noticia.link}}" target="_blank">{{noticia.titulo}}</a></h3>
-                <img src="../../{{noticia.imagem}}" class = "noticia_img"><br>
+                <img src="{{noticia.imagem.url}}" class = "noticia_img"><br>
                 <p>{{noticia.descricao}}</p><br>
             </div>
         {% endfor %}
