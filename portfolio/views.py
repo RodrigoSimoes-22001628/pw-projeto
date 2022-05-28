@@ -20,9 +20,6 @@ def login_view (request):
 
         if user is not None :
             login(request, user)
-            context{
-
-            }
             return HttpResponseRedirect(reverse('portfolio:blog'))
         else :
             return render(request, 'portfolio/login.html', {
