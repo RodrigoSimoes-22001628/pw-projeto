@@ -13,19 +13,19 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def login_view (request):
-    if request.method == "Post":
+    if request.method == "POST":
         username = request.Post['username']
         password = request.POST['password']
         user = authenticate(request, username = username, password = password)
 
         if user is not None :
             login(request, user)
-            return HttpResponseRedirect(reverse('portfolio : home'))
+            return HttpResponseRedirect(reverse('portfolio:blog'))
         else :
             return render(request, 'portfolio/login.html', {
                 'menssage': "Invalid credentials"
             })
-    return render (request,'portfolio/login.html' )
+    return render (request,'portfolio/home.html' )
 
 def logout_view(request):
     logout(request)
@@ -136,6 +136,7 @@ def blog_nova_view(request):
     context = {'form': form}
     return render(request, 'portfolio/blog_nova.html', context)
 
+@login_required
 def blog_edita_view(request, blog_id):
     blog = Publicacao.objects.get(id=blog_id)
     form = PublicacaoForm(request.POST or None, instance=blog)
