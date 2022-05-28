@@ -20,12 +20,15 @@ def login_view (request):
 
         if user is not None :
             login(request, user)
+            context{
+
+            }
             return HttpResponseRedirect(reverse('portfolio:blog'))
         else :
             return render(request, 'portfolio/login.html', {
                 'menssage': "Invalid credentials"
             })
-    return render (request,'portfolio/home.html' )
+    return render (request,'portfolio/login.html' )
 
 def logout_view(request):
     logout(request)
