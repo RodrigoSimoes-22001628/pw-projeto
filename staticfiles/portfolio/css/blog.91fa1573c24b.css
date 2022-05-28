@@ -1,0 +1,37 @@
+.blog div{
+    width: 500px;
+    height: auto;
+    border-radius: 20px 20px 20px 20px;
+    padding: 10px 20px;
+    background-color: white;
+    margin: 10px;
+    box-shadow: 5px 5px 15px #888888;
+}
+
+.blog{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(238, 248, 248);
+}
+
+h3{
+    font-family: myriad pro regular;
+    color: #403e3e;
+    font-size: 30px;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+.imagem{
+    padding-top: 20px;
+    width: 250px;
+    margin-left: 100px;
+    padding-bottom: 20px;
+}
+
+.titulo{
+    text-align: center;
+}
+.data{
+    text-align: right;
+}

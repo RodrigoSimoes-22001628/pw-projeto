@@ -1,0 +1,69 @@
+* {
+    padding: 0; 
+    margin: 0;
+    box-sizing:border-box;
+    font-family: sans-serif;
+  }
+
+  main{
+    background-color: rgb(238, 248, 248);
+  }
+  
+  header {
+    height: 10vh; 
+    background: cadetblue;
+    color: white;
+    top: 0;
+    position: fixed;
+    display:flex;
+    justify-content: space-between;  
+    align-items: center;
+    margin-right: 50px;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  header div {
+    font-size: 2em;  
+    padding: 1em;
+  }
+  
+  header nav {
+    display:flex;
+    justify-content: flex-end;  
+  }
+  
+  
+  nav a {
+    padding: 0 1em;
+    text-decoration: none;
+    font-size: 1rem;
+    color: lightgray;
+  }
+
+  nav a:hover{
+    color: black;
+ }
+  
+  main {
+    margin-top: 10vh;
+    background-color: white;
+    margin-bottom: 5vh;
+  }
+  
+  footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+    background: cadetblue;
+    color: white;
+  }
+  .logo{
+    justify-self: left;
+  }
+  .contacto {
+    color: white;
+  }
+
+  

@@ -1,0 +1,109 @@
+{% extends 'portfolio/layout.html' %}
+
+{% load static %} 
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/programacaoweb.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h1>Tecnologias Existentes</h1>
+    <div class="container">
+        {% for tecnologia  in tecnologias %}
+            <div>
+                <h3> <a href="{{tecnologia.link}}" target="_blank">{{tecnologia.nome}} : {{tecnologia.acronimo}}</a></h3>
+                <img src="../../{{tecnologia.logotipo}}" class = "logo_tecnologia"><br>
+                <ul>
+                    <li><b>Ano Criação: </b>{{tecnologia.anoCriacao}}</li>
+                    <li><b>Criador: </b>{{tecnologia.criador}}</li>
+                </ul><br>
+                <p>{{tecnologia.descricao}}</p><br>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1>Sobre Este Website</h1>
+    <h2>Estrutura do website:</h2>
+        <p> O Website é constituido por 6 páginas (Home, Sobre mim, Projetos , Programação Web, Blog , Contacto).
+            Foi desenvolvido recorrendo a Html, CSS , Django e Python.
+            É possível observar todas as informações referentes à Licencitatura (Descrição Cadeira e Projetos), 
+            um breve apresentação sobre mim, possui também um blog onde os colegas podem dar feedback sobre projetos 
+            que realizaram comigo ou que gostam de fazer determinada ação comigo.
+            O Principal objetivo do website é o desenvolvimento de um portfólio bem extruturado e completo.
+        </p>
+        
+    <h2>Diagrama DER</h2>
+    {% load static %}
+    <img src="{% static 'portfolio/images/Diagrama DER.png' %}" class="diagrama">
+
+    <h3>Tecnologias Utilizadas</h3>
+    <div class="container">
+        {% for tecnologiawebsite  in tecnologiawebsites %}
+            <div>
+                <h3> <a href="{{tecnologiawebsite.link}}" target="_blank">{{tecnologiawebsite.nome}} : {{tecnologiawebsite.acronimo}}</a></h3>
+                <img src="../../{{tecnologiawebsite.logotipo}}" class = "logo_tecnologia">
+                <ul>
+                    <li><b>Ano Criação: </b>{{tecnologiawebsite.anoCriacao}}</li>
+                    <li><b>Criador: </b>{{tecnologiawebsite.criador}}</li>
+                </ul><br>
+                <img src="../../{{tecnologiawebsite.codigo}}" class = "codigo_img">
+                <p>{{tecnologiawebsite.descricao}}</p>
+            </div>
+        {% endfor %}
+    </div>
+  
+    <h2>Laboratórios PW</h2>
+    <div class="container">
+        {% for laboratorio  in laboratorios %}
+            <div>
+                <h3><a href="{{laboratorio.link}}" target="_blank">{{laboratorio.titulo}}</a></h3>
+                <p>{{laboratorio.descricao}}</p><br>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2>Notícias</h2>
+    <div class="noticia">
+        {% for noticia  in noticias %}
+            <div>
+                <h3 class = "titulo_noticia"> <a href="{{noticia.link}}" target="_blank">{{noticia.titulo}}</a></h3>
+                <img src="../../{{noticia.imagem}}" class = "noticia_img"><br>
+                <p>{{noticia.descricao}}</p><br>
+            </div>
+        {% endfor %}
+    </div>
+    <h3>Técnicas  efeitos</h3>
+
+    <h2>Quizz</h2>
+    <form form method="POST" action="quizz">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Quizz Sobre Programação Web</legend>
+        </fieldset>
+        <fieldset title="Info">
+            <input type="text" name = "nome" id = "nome" placeholder="Insira o seu nome"  size="20">
+            <input type="text" name="apelido" id = "apelido" placeholder="Insira o seu apelido" size="20">
+        </fieldset><br>
+        
+            <label>Em que ano foi criado o HTML?</label>
+            <input type="text" name = "Html" id = "Html" size="20"><br><br>
+
+            <label>Quem criou o CSS ?</label>
+            <input type="text" name = "Css" id = "Css" size="20"><br><br>
+
+            <label>Qual a linguagem que permite aplicar estilos seletivamente a elementos em documentos HTML?</label>
+            <input type="text" name = "estilos" id = "estilos" size="20"><br><br>
+
+            <label>Qual é a linguagem que é uma framework web do Python ?</label>
+            <input type="text" name = "Django" id = "Django" size="20"><br><br>
+
+            <input type="reset" value="Apagar Respostas"><br>
+            
+            {% load static %}
+            <input type="image" src="{% static 'portfolio/images/submit.png' %}" alt="Submit" width="48" height="48">
+        </fieldset><br>
+    </form>
+    
+    <h2>Resultados</h2>
+    {% load static %} 
+    <img src="{% static 'portfolio/images/grafico.png' %}">
+{% endblock %}

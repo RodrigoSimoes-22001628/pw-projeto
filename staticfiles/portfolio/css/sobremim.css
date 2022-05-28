@@ -1,0 +1,96 @@
+main{
+  margin-left: 5px;
+}
+
+a{
+  color: black;
+}
+
+.container {
+    background-color: rgb(238, 248, 248);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px 100px; 
+  }
+  
+  .container div {
+    float: left;
+    width: 360px;   
+    height: 250px;
+    padding: 25px;  
+    margin: 10px;
+    background-color: white;  
+    border-radius: 10px;          
+    box-shadow: 5px 5px 15px grey;
+  }
+  
+  .after-box {
+    clear: left;
+    background-color: skyblue;
+  }
+
+  .escola{
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-bottom: 20px;
+    height: 200px;
+    border-radius: 10px;          
+    box-shadow: 5px 5px 15px grey;
+  }
+
+  h1,h2,h3{
+    font-family: myriad pro regular;
+    color: #403e3e;
+    line-height: 30px;
+    padding-bottom: 20px;
+  }
+
+  .educacao{
+    background-color: rgb(238, 248, 248);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px; 
+    margin-bottom: 50px;
+  }
+
+  .educacao div {
+    width: 500px;
+    height: auto;
+    padding: 25px;  
+    margin: 10px;
+    background-color: white;  
+    border-radius: 10px;          
+    box-shadow: 5px 5px 15px grey;
+  }
+
+  .logo_eca {
+      width: 80px;
+      margin-left: 60%;
+  }
+  
+  .adb{
+    width: 450px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+  }
+
+  .linguas {
+    background-color: rgb(238, 248, 248);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px 100px; 
+  }
+  
+  .linguas div {
+    float: left;
+    width: 200px;   
+    height: 130px;
+    padding: 25px;  
+    margin: 10px;
+    background-color: white;  
+    border-radius: 10px;          
+    box-shadow: 5px 5px 15px grey;
+  }

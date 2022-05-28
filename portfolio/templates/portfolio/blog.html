@@ -1,0 +1,28 @@
+{% extends 'portfolio/layout.html' %}
+
+{% load static %} 
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/blog.css' %}">
+{% endblock %}
+
+{% block main %}
+	<h3>Blog</h3>
+    <div class="blog">
+        {% for publicacao in publicacaos %}
+            <div>
+                <h3 class="titulo">{{publicacao.titulo}}</h3>
+                <img src="../../{{publicacao.imagem}}" class="imagem"><br>
+                <span>{{publicacao.descricao}}</span><br>
+                {% if publicacao.link is not None %}
+                    <a href="{{publicacao.link |default_if_none:'#'}}">Link</a><br>
+                {% endif %}<br>
+                <p>{{publicacao.autor}}</p><br>
+                <p class="data">{{publicacao.data}}</p>
+            </div>
+            <a href="{% url 'portfolio:blog_edita' publicacao.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">
+                Editar
+            </a>
+        {% endfor %}
+    </div>
+        <button><a href="{% url 'portfolio:blog_nova' %}" class="btn btn-success btn-block">+ Nova Publicação</a></button>
+{% endblock %}

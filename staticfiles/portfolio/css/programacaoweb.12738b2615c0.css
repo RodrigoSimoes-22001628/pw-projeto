@@ -1,0 +1,79 @@
+form{
+  background-color: rgb(238, 248, 248);
+  margin: 20px;
+}
+
+.container {
+    background-color: rgb(238, 248, 248);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px 100px;
+  }
+  
+  .container div {
+    float: left;
+    width: 400px;   
+    height: auto;
+    padding: 25px;  
+    margin: 10px;
+    background-color: white; 
+    border-radius: 10px;          
+    box-shadow: 5px 5px 15px grey;
+    margin-bottom: 50px;
+  }
+ 
+  h1,h2,h3{
+    font-family: myriad pro regular;
+    color: #403e3e;
+    line-height: 30px;
+    padding-bottom: 20px;
+  }
+
+  a{
+    text-decoration: none;
+    color: cadetblue;
+  }
+
+  .logo_tecnologia {
+    width: 80px;
+    margin-left: 60%;
+}
+
+.noticia {
+  background-color: rgb(238, 248, 248);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 25px;
+}
+
+.noticia div {
+  float: left;
+  width: 400px;   
+  padding: 25px;  
+  margin: 10px;
+  background-color: white; 
+  border-radius: 10px;          
+  box-shadow: 5px 5px 15px grey;
+}
+
+.codigo_img{
+  padding-top: 20px;
+  width: 250px;
+  margin-left: 50px;
+  padding-bottom: 20px;
+}
+.noticia_img{
+  width: 250px;
+  margin-left: 50px;
+  padding-bottom: 20px;
+}
+
+.titulo_noticia{
+  text-align: center;
+}
+
+.diagrama{
+  max-width: 100%;
+}

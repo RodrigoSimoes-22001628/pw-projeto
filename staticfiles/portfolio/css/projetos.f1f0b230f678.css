@@ -1,0 +1,49 @@
+.container {
+    background-color: rgb(238, 248, 248);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px 100px;
+  }
+  
+  .container div {
+    float: left;
+    width: 400px;   
+    height: auto;
+    padding: 25px;  
+    margin: 10px;
+    background-color: white; 
+    border-radius: 10px;          
+    box-shadow: 5px 5px 15px grey;
+    margin-bottom: 50px;
+  }
+  .container h3 {
+      text-align: center;
+  }
+
+  .container div p {
+    background-color: white 
+  }
+  .container div img {
+      width: 260px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      margin-left: 15%;
+  }
+  
+  .after-box {
+    background-color: skyblue;
+  }
+
+  h1,h2,h3{
+    font-family: myriad pro regular;
+    color: #403e3e;
+    line-height: 30px;
+    padding-bottom: 20px;
+  }
+
+  a{
+    text-decoration: none;
+    color: cadetblue;
+  }
+

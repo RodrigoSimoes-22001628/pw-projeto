@@ -1,0 +1,34 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/projetos.css' %}">
+{% endblock %}
+
+{% block main %}
+	<h1>Projetos</h1>
+    <h3>Realizados por mim</h3>
+        <div class="container">
+            {% for projeto in projetos %}
+            <div>
+                <a href="{% url 'portfolio:projetos_edita' projeto.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">
+                    Editar
+                </a>
+                <h3>{{projeto.titulo}}</h3><br>
+                <img src="../../{{projeto.imagem}}"><br>
+                <p>{{projeto.descricao}}</p><br>
+                <ul>
+                    <li><b>Ano Realização: </b>{{projeto.anoRealizacao}}</li>
+                    <li><b>Participantes: </b>{% for participante in projeto.participantes.all %}{{participante.nome}}; {% endfor %}</li>
+                    <li><b>Tecnologias: </b>{% for tecnologia in projeto.tecnologias.all %}{{tecnologia.nome}} {% endfor %}</li>
+                    {% if projeto.linkGitHub is not None %}
+                        <a href ="{{projeto.linkGitHub |default_if_none:'#'}}">Link GitHub</a>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        <button><a href="{% url 'portfolio:projetos_nova' %}" class="btn btn-success btn-block">+ Novo Projeto</a></button> 
+
+    <h2>Trabalhos Finais de Curso interessantes </h2>  
+{% endblock %}

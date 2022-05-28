@@ -1,0 +1,36 @@
+{% extends 'portfolio/layout.html' %}
+
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/hero.css' %}">
+{% endblock %}
+
+{% block main %}
+  <section>
+    
+    <div class="home">
+      <p>Bem-Vindos</p>
+      <p>Chamo-me Rodrigo Simões</p>
+      <p>Aluno de Engenharia Informática</p>
+      <button class="botao1"><a href="#sobremim">Saiba mais</a></button>
+      <button class="botao2"><a href="{% static 'portfolio/images/cv.pdf' %}" download="" target="_blank">Download CV</a></button>
+    </div>
+    <div>
+      {% load static %}
+      <img src="{% static 'portfolio/images/rodrigo.png' %}" class="foto"> 
+    </div>
+  </section>
+
+  {% load static %}
+  <img src="{% static 'portfolio/images/computador.jpeg' %}" class="computador">
+
+  <article class ="sobremim" id="sobremim">
+    <h3>Mais Sobre Mim:</h3>
+      Escolhi o curso de Engenharia Informática porque sempre gostei de computadores e de jogar 
+      com os meus amigos o que me despertou interesse na área.<br>
+      De um modo geral tenho gostado de aprender todas as cadeiras pois são todas muito práticas o que nos traz alguns desafios.<br>
+      Quando acabar a Lincenciatura quero ingressar num Mestrado para aprofundar ainda mais as minhas capacidades e competências e se possível começar a trabalhar na área.<br>
+      Nos meus tempos livres sou treinador de Guarda Redes de futebol.
+  </article>
+
+{% endblock %}

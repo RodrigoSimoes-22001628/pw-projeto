@@ -1,0 +1,84 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %} 
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/sobremim.css' %}">
+{% endblock %}
+{% block main %}    
+    <h1>Licenciatura</h1>
+    <h3>Cadeiras </h3>
+    <button><a href="{% url 'portfolio:cadeira_nova' %}" class="btn btn-success btn-block" width="50px">+ Nova Cadeira</a></button>
+    <div class="educacao">
+      {% for cadeira in cadeiras %}
+      <div>
+        <a href="{% url 'portfolio:cadeira_edita' cadeira.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">
+          Editar
+        </a>
+          <h3>{{cadeira.nome}}</h3>
+            <ul>
+              <li><b>Ano: </b>{{cadeira.ano}}</li>
+              <li><b>Semestre: </b>{{cadeira.semestre}}</li>
+              <li><b>Número de ECTS: </b>{{cadeira.ects}}</li>
+              <li><b>Ano Letivo Frequentado: </b> {{cadeira.ano_letivo}}</li>
+              <li><b>Tópicos abordados: </b>{{cadeira.topicos_abordados}} </li>
+              <li><b>Linguagens: </b>{% for language in cadeira.linguagens.all %}{{language.nome}} {% endfor %}</li>
+              <li><b>Ranking (0-5): </b>{{cadeira.ranking}}</li>
+              <li><b>Professor Teórica: </b><a href="{{cadeira.docente_teorica.link_lusofona}}"> <i>{{cadeira.docente_teorica.nome}}</i></a></li>
+              <li><b>Professores Práticas: </b>{% for docente_pratica in cadeira.docentes_praticas.all %}<a href="{{docente_pratica.link_lusofona}}"> {{docente_pratica.nome}}; </a> {% endfor %}</li>
+              <li><b><a href="{{cadeira.link_cadeira}}"><i>Link da Cadeira</i></a></b></li>
+              <li><b>Projetos: </b>{% for projeto in cadeira.projetos.all %}<a href="{% url 'portfolio:projetos' %}"> {{projeto.titulo}}</a> {% endfor %}</li>
+          </ul>
+      </div><br>
+      {% endfor %}
+    </div>
+
+    <h2>Educação</h2>
+    <div class="educacao">
+      {% for educacao in educacaos %}
+        <div>
+            <img src="../../{{educacao.logotipo}}" class="logo_eca">
+            <h3>{{educacao.formacao}}</h3>
+            <ul>
+              <li><b>Período: </b>{{educacao.periodo}}</li>
+              <li><b>Curso: </b>{{educacao.curso}}</li>
+              <li><b>Local: </b>{{educacao.local}}</li>
+            </ul>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h2>Aptidões e competências pessoais</h2>
+    <div class="educacao">
+      {% for competencia in competencias %}
+        <div> 
+            <h3>{{competencia.titulo}}</h3>
+            <p>{{competencia.descricao}}</p>
+            <p><b>Projetos: </b>{% for projeto in competencia.projetos.all %} <a href="{% url 'portfolio:projetos' %}"> {{projeto.titulo}}</a> {% endfor %}</p>
+            <p><b>Cadeira: </b>{% for cadeira in competencia.cadeira.all %} <a href="{{cadeira.link_cadeira}}">{{cadeira.nome}};</a> {% endfor %}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h2>Línguas</h2>
+    <div class="linguas">
+      {% for lingua in linguas %}
+        <div> 
+            <h2>{{lingua.nome}}</h3>
+            <p><b>Nível: </b>{{lingua.nivel}}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h2>Interesses e hobbies</h2>
+    <div class="educacao">
+      {% for interesse in interesses %} 
+        <div>
+            <h3>{{interesse.titulo}}</h3>
+            <img src="../../{{interesse.imagem}}" class = "adb">
+            <p>{{interesse.descricao}}</p>
+            {% if interesse.link is not None %}
+            <a href ="{{interesse.link}}" target="_blank">{{interesse.link}}</a>
+            {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+{% endblock %}

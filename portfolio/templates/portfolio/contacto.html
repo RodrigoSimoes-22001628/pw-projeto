@@ -1,0 +1,22 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %} 
+{% block link %}
+<link rel="stylesheet" href="{% static 'portfolio/css/contacto.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="contacto">
+    <a href="https://github.com/RodrigoSimoes-22001628">
+        {% load static %}
+        <img src="{% static 'portfolio/images/github.png' %}"  target="_blank">
+    </a>
+    <a href="mailto: rodrigomnsimoes@gmail.com" target="_blank">
+        {% load static %}
+        <img src="{% static 'portfolio/images/gmail.png' %}" >
+    </a>
+    <a href="https://www.linkedin.com/in/rodrigo-sim%C3%B5es-6a2393207/" target="_blank">
+        {% load static %}
+        <img src="{% static 'portfolio/images/linkedin.png' %}">
+    </a>
+</div>
+{% endblock %}
