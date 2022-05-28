@@ -20,7 +20,8 @@ def login_view (request):
 
         if user is not None :
             login(request, user)
-            return HttpResponseRedirect(reverse('portfolio:blog'))
+            context = {'publicacaos': Publicacao.objects.all()}
+            return render(request, 'portfolio/blog.html', context)
         else :
             return render(request, 'portfolio/login.html', {
                 'menssage': "Invalid credentials"
