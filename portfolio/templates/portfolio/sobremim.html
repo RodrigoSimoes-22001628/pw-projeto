@@ -6,13 +6,9 @@
 {% block main %}    
     <h1>Licenciatura</h1>
     <h3>Cadeiras </h3>
-    <button><a href="{% url 'portfolio:cadeira_nova' %}" class="btn btn-success btn-block" width="50px">+ Nova Cadeira</a></button>
     <div class="educacao">
       {% for cadeira in cadeiras %}
       <div>
-        <a href="{% url 'portfolio:cadeira_edita' cadeira.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">
-          Editar
-        </a>
           <h3>{{cadeira.nome}}</h3>
             <ul>
               <li><b>Ano: </b>{{cadeira.ano}}</li>

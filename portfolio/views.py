@@ -47,69 +47,13 @@ def sobremim_view(request):
                }
     return render(request, 'portfolio/sobremim.html', context)
 
-def cadeira_nova_view(request):
-    form = CadeirasForm(request.POST or None, request.FILES)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse('portfolio:sobremim'))
-
-    context = {'form': form}
-    return render(request, 'portfolio/cadeira_nova.html', context)
-
-def cadeira_edita_view(request, cadeira_id):
-    cadeira = Cadeira.objects.get(id=cadeira_id)
-    form = CadeirasForm(request.POST or None, request.FILES, instance=cadeira)
-
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse('portfolio:sobremim'))
-
-    context = {'form': form, 
-                'cadeira_id': cadeira_id,
-              }
-    return render(request, 'portfolio/cadeira_edita.html', context)
-
-def cadeira_apaga_view(request, cadeira_id):
-    Cadeira.objects.get(id=cadeira_id).delete()
-    return HttpResponseRedirect(reverse('portfolio:sobremim'))
-
-
-
 #----------------------------------------------------------
-
-
 
 def projetos_view(request):
     context = {'projetos': Projeto.objects.all(),
                 'tfcs': TFC.objects.all(),
                 }
     return render(request, 'portfolio/projetos.html', context)
-
-def projetos_nova_view(request):
-    form = ProjetosForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse('portfolio:projetos'))
-
-    context = {'form': form}
-    return render(request, 'portfolio/projetos_nova.html', context)
-
-def projetos_edita_view(request, projeto_id):
-    projeto = Projeto.objects.get(id=projeto_id)
-    form = ProjetosForm(request.POST or None, instance=projeto)
-
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(reverse('portfolio: projetos'))
-
-    context = {'form': form, 
-                'projeto_id': projeto_id,
-              }
-    return render(request, 'portfolio/projetos_edita.html', context)
-
-def projetos_apaga_view(request, projeto_id):
-    Projeto.objects.get(id=projeto_id).delete()
-    return HttpResponseRedirect(reverse('portfolio:projetos'))
 
 #----------------------------------------------------------------------------------------
 

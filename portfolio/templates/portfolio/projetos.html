@@ -11,9 +11,6 @@
         <div class="container">
             {% for projeto in projetos %}
             <div>
-                <a href="{% url 'portfolio:projetos_edita' projeto.id %}" class="btn btn-warning  btn-sm" style="float: right; margin-right: 10px">
-                    Editar
-                </a>
                 <h3>{{projeto.titulo}}</h3><br>
                 <img src="{{projeto.imagem.url}}"><br>
                 <p>{{projeto.descricao}}</p><br>
@@ -28,7 +25,6 @@
             </div>
             {% endfor %}
         </div>
-        <button><a href="{% url 'portfolio:projetos_nova' %}" class="btn btn-success btn-block">+ Novo Projeto</a></button> 
-
+    
     <h2>Trabalhos Finais de Curso interessantes </h2>  
 {% endblock %}

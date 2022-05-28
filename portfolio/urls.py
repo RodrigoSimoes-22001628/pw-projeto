@@ -6,15 +6,9 @@ app_name = 'portfolio'
 urlpatterns = [
     path('', views.home_view, name='home'), 
     path('sobremim', views.sobremim_view, name='sobremim'),
-    path('cadeira_nova',views.cadeira_nova_view, name='cadeira_nova'),
-    path('cadeira_edita/<int:cadeira_id>', views.cadeira_edita_view, name='cadeira_edita'),
-    path('cadeira_apaga/<int:cadeira_id>', views.cadeira_apaga_view, name='cadeira_apaga'),
 
 
     path('projetos', views.projetos_view, name='projetos'),
-    path('projetos_nova',views.projetos_nova_view, name='projetos_nova'),
-    path('projetos_edita/<int:projeto_id>', views.projetos_edita_view, name='projetos_edita'),
-    path('projetos_apaga/<int:projeto_id>', views.projetos_apaga_view, name='projetos_apaga'),
 
     path('programacaoweb', views.programacaoweb_view, name='programacaoweb'),
     path('blog', views.blog_view, name='blog'),
