@@ -11,7 +11,7 @@
         {% for publicacao in publicacaos %}
             <div>
                 <h3 class="titulo">{{publicacao.titulo}}</h3>
-                <img src="../../{{publicacao.imagem}}" class="imagem"><br>
+                <img src="{{publicacao.imagem.url}}" class="imagem"><br>
                 <span>{{publicacao.descricao}}</span><br>
                 {% if publicacao.link is not None %}
                     <a href="{{publicacao.link |default_if_none:'#'}}">Link</a><br>
