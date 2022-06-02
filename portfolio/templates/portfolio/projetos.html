@@ -26,5 +26,28 @@
             {% endfor %}
         </div>
     
-    <h2>Trabalhos Finais de Curso interessantes </h2>  
+    <h3>Trabalhos Finais de Curso interessantes </h3>
+    <div class="container">
+        {% for tfc in tfcs %}
+        <div>
+            <h3>{{tfc.titulo}}</h3><br>
+            <img src="{{tfc.imagem.url}}"><br>
+            <p>{{projeto.sumario}}</p><br>
+            <ul>
+                <li><b>Ano Realização: </b>{{tfc.anoRealizacao}}</li>
+                <li><b>Autores: </b>{% for autor in tfc.autor.all %}{{autor.nome}}; {% endfor %}</li>
+                <li><b>Orientador: </b>{% for orientador in tfc.orientador.all %}{{orientador.nome}}; {% endfor %}</li>
+                {% if tfc.link_relatorio is not None %}
+                    <a href ="{{tfc.link_relatorio |default_if_none:'#'}}">Link Relatório</a>
+                {% endif %}
+                {% if tfc.linkGitHub is not None %}
+                    <a href ="{{tfc.linkGitHub |default_if_none:'#'}}">Link GitHub</a>
+                {% endif %}
+                {% if tfc.linkYt is not None %}
+                <a href ="{{tfc.linkYt |default_if_none:'#'}}">Link Vídeo</a>
+                {% endif %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}

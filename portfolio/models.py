@@ -59,6 +59,7 @@ class TFC (models.Model):
     titulo = models.CharField(max_length = 80)
     autor = models.ManyToManyField(Pessoa ,  related_name= 'autor')
     orientador = models.ManyToManyField(Pessoa , related_name= 'orientador')
+    imagem = models.ImageField(upload_to= 'static/portfolio/images', blank=True) 
     anoRealizacao = models.IntegerField()
     sumario = models.CharField(max_length = 500)
     link_relatorio = models.CharField(max_length = 1000)

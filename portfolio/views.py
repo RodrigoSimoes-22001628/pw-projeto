@@ -47,7 +47,7 @@ def sobremim_view(request):
                }
     return render(request, 'portfolio/sobremim.html', context)
 
-#----------------------------------------------------------
+#--------------------------------------------------------------------------------------
 
 def projetos_view(request):
     context = {'projetos': Projeto.objects.all(),
