@@ -34,7 +34,7 @@
         <div>
             <h3>{{tfc.titulo}}</h3><br>
             <img src="{{tfc.imagem.url}}"><br>
-            <p>{{projeto.sumario}}</p><br>
+            <p>{{tfc.sumario}}</p><br>
             <ul>
                 <li><b>Ano Realização: </b>{{tfc.anoRealizacao}}</li>
                 <li><b>Autores: </b>{% for autor in tfc.autor.all %}{{autor.nome}}; {% endfor %}</li>
