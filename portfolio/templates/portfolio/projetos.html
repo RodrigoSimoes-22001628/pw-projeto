@@ -38,13 +38,13 @@
                 <li><b>Autores: </b>{% for autor in tfc.autor.all %}{{autor.nome}}; {% endfor %}</li>
                 <li><b>Orientador: </b>{% for orientador in tfc.orientador.all %}{{orientador.nome}}; {% endfor %}</li>
                 {% if tfc.link_relatorio is not None %}
-                    <a href ="{{tfc.link_relatorio |default_if_none:'#'}}">Link Relatório</a>
+                    <a href ="{{tfc.link_relatorio |default_if_none:'#'}}">Link Relatório</a><br>
                 {% endif %}
                 {% if tfc.linkGitHub is not None %}
-                    <a href ="{{tfc.linkGitHub |default_if_none:'#'}}">Link GitHub</a>
+                    <a href ="{{tfc.linkGitHub |default_if_none:'#'}}">Link GitHub</a><br>
                 {% endif %}
                 {% if tfc.linkYt is not None %}
-                <a href ="{{tfc.linkYt |default_if_none:'#'}}">Link Vídeo</a>
+                <a href ="{{tfc.linkYt |default_if_none:'#'}}">Link Vídeo</a><br>
                 {% endif %}
             </ul>
         </div>
