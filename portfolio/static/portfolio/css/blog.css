@@ -10,7 +10,7 @@
 
 .blog{
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap; */
     background-color: rgb(238, 248, 248);
 }
 
