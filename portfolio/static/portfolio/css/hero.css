@@ -1,3 +1,24 @@
+.container {
+    background-image: url(../images/temperatura.jpg);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px 100px;
+	margin-bottom: 20px;
+}
+  
+.container div {
+    float: left;
+    width: 400px;   
+    height: auto;
+    padding: 25px;  
+    margin: 10px;
+    background-color: white; 
+    border-radius: 10px;          
+    box-shadow: 5px 5px 15px grey;
+    margin-bottom: 50px;
+  }
+
 section{
 	width: 100%;
 	height: 95vh;
