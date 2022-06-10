@@ -76,4 +76,34 @@
     });
   </script>
 
+
+  <h2>Euromilhões API:</h2>
+  <div class="cash">
+    <div>
+      <button onclick="get_numbers()">💲 Carregue para saber os número de hoje 💲</button>
+      <p id="numeros"></p>
+      <p id="estrelas"></p>
+    </div>
+  </div>
+
+  <script>
+      function get_numbers(){
+      const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'b8bb4632femsh76020d4b345a836p136f4djsn5101f2c7f3ae',
+            'X-RapidAPI-Host': 'euro-millions.p.rapidapi.com'
+        }
+      };
+
+      fetch('https://euro-millions.p.rapidapi.com/results/lastresult', options)
+      .then(response => response.json())
+      .then(data =>
+          {
+          document.getElementById('numeros').innerHTML = "Números: "+ String(data.numbers[0]) + ", " + String(+data.numbers[1]) 
+          + ", " + String(data.numbers[2]) + ", " + String(+data.numbers[3]);
+          document.getElementById('estrelas').innerHTML = "Estrelas: "+ String(data.stars[0]) + ", " + String(data.numbers[1]);
+        });
+  } 
+  </script>
 {% endblock %}

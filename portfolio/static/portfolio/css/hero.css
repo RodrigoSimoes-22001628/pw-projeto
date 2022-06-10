@@ -135,3 +135,27 @@ article h3{
 	line-height: 30px;
 	padding-bottom: 20px;
 }
+
+
+.cash {
+    background-color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 25px 100px;
+	margin-bottom: 20px;
+	margin-left :80px;
+	margin-right:80px;
+}
+  
+.cash div {
+    float: left;
+    width: 250px;   
+    height: auto;
+    padding: 25px;  
+    margin: 10px;
+    background-color: cadetblue; 
+    border-radius: 10px;          
+    box-shadow: 5px 5px 15px grey;
+    margin-bottom: 50px;
+}
