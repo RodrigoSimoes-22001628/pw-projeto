@@ -24,32 +24,6 @@
   {% load static %}
   <img src="{% static 'portfolio/images/computador.jpeg' %}" class="computador">
   
-  <h2>IPMA API:</h2>
-  <div class="container">
-    <div>
-      <h4>Temperatura de Hoje em Lisboa:</h4>
-      <p id="tempMin">Temperatura Min: </p>
-      <p id="tempMax">Temperatura Max: </p>
-      <p id="precipitacao">Precipitacão: </p>
-    </div>
-  </div>
-
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
-      fetch('https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json')// envia GET request ao URL
-      .then(response => response.json()) // Põe a resposta no formato json
-      .then(data =>{
-        let tempMin = data.data[0].tMin
-        document.querySelector('#tempMin').append(tempMin);
-        let tempMax = data.data[0].tMax
-        document.querySelector('#tempMax').append(tempMax);
-        let preci = data.data[0].precipitaProb
-        document.querySelector('#precipitacao').append(preci);
-
-      } ); // põe os dados na consola
-    });
-  </script>
-
   <article class ="sobremim" id="sobremim">
     <h3>Mais Sobre Mim:</h3>
       Escolhi o curso de Engenharia Informática porque sempre gostei de computadores e de jogar 
@@ -58,5 +32,48 @@
       Quando acabar a Lincenciatura quero ingressar num Mestrado para aprofundar ainda mais as minhas capacidades e competências e se possível começar a trabalhar na área.<br>
       Nos meus tempos livres sou treinador de Guarda Redes de futebol.
   </article>
+
+  <h2>IPMA API:</h2>
+  <div class="container">
+    <div>
+      <h4>Temperatura de Hoje em Lisboa:</h4><br>
+      <p id="tempMin">Temperatura Min: </p>
+      <p id="tempMax">Temperatura Max: </p>
+      <p id="precipitacao">Precipitacão: </p>
+    </div>
+
+    <div>
+      <h4>Temperatura de Amanhã em Lisboa:</h4><br>
+      <p id="tempMinAmanha">Temperatura Min: </p>
+      <p id="tempMaxAmanha">Temperatura Max: </p>
+      <p id="precipitacaoAmanha">Precipitacão: </p>
+    </div>
+  </div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      fetch('https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1110600.json')// envia GET request ao URL
+      .then(response => response.json()) // Põe a resposta no formato json
+      .then(data =>{
+
+        /* Temperatura Hoje */
+        let tempMin = data.data[0].tMin
+        document.querySelector('#tempMin').append(tempMin);
+        let tempMax = data.data[0].tMax
+        document.querySelector('#tempMax').append(tempMax);
+        let preci = data.data[0].precipitaProb
+        document.querySelector('#precipitacao').append(preci);
+
+        /* Temperatura de Amanhã */
+        let tempMinAmanha = data.data[1].tMin
+        document.querySelector('#tempMinAmanha').append(tempMinAmanha);
+        let tempMaxAmanha = data.data[1].tMax
+        document.querySelector('#tempMaxAmanha').append(tempMaxAmanha);
+        let preciAmanha = data.data[1].precipitaProb
+        document.querySelector('#precipitacaoAmanha').append(preciAmanha);
+
+      } ); // põe os dados na consola
+    });
+  </script>
 
 {% endblock %}
