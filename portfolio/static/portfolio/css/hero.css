@@ -116,6 +116,15 @@ a{
     margin-bottom: 50px;
 }
 
+h2{	
+	text-align: left;
+	font-family: myriad pro regular;
+	color: #403e3e;
+	font-size: 30px;
+	line-height: 30px;
+	padding-bottom: 20px;
+}
+
 article h3{
 	text-align: left;
 	font-family: myriad pro regular;
