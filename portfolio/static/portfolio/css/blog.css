@@ -2,13 +2,15 @@
     width: 500px;
     height: auto;
     border-radius: 20px 20px 20px 20px;
+    padding: 10px 20px;
     background-color: white;
-    box-shadow: 5px 5px 15px #888888;
     margin: 20px;
+    box-shadow: 5px 5px 15px #888888;
 }
 
 .blog{
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     background-color: rgb(238, 248, 248);
     max-width: 100%;
 }
