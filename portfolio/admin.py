@@ -10,6 +10,7 @@ admin.site.register(Interesse)
 admin.site.register(Lingua)
 
 #Projetos
+#Projetos
 admin.site.register(Projeto)
 admin.site.register(TFC)
 
